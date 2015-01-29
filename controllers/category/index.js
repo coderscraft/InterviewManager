@@ -27,27 +27,35 @@ module.exports = function (router) {
     });
 
 
+ /* Get Next id for new question in mentioned category */
 
- router.get('/:category/nextid', function (req, res) {
+
+ router.get('/:category/nextid',  function (req, res) {
 
 
         var category = req.param("category");
      	var condition = { c_name: category};
         
-	     CategoryModel.find(condition,function (err, cats) {
+	     CategoryModel.findOne(condition, {'cq_id':1, '_id':0},function (err, questionId) {
 
-                 console.log(cats.length);
-
-				if (err) {
+               if (err) {
 					console.log(err);
 				}
-				
-				var model =
-				{
-					category: cats
-				};
+
+               if(questionId != 'null') {
+                     var cqid = questionId.cq_id;
+                     cqid = cqid + 1;
+                    
+                   var model =
+					{
+						cq_id: cqid
+					};
 				
 				 res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+
+               }
+
+				
 			}); 
 
         
