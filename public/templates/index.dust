@@ -6,7 +6,15 @@
 
 
 {<body}
-     <div class="container">
+     
+
+<main class="bs-docs-masthead" id="content" role="main">
+  <div class="container">
+    <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">R</span>
+    <span class="lead">{@pre type="content" key="message"/}</span>   
+  </div>
+</main>
+<div class="container">
 
       <form class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
@@ -22,5 +30,5 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
-    </div> <!-- /container -->
+    </div> <!-- /container --> 
 {/body}

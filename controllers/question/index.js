@@ -6,8 +6,19 @@ var QuestionModel = require('../../models/question');
 
 module.exports = function (router) {
 
+
+/* Load Question Index page */
+
+router.get('/', function (req, res) {
+        
+	     res.render('question');
+
+    });
+
   
- router.get('/', function (req, res) {
+  /* Return all questions */
+
+ router.get('/all', function (req, res) {
         
 	     QuestionModel.find(function (err, cats) {
 				if (err) {
