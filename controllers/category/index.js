@@ -6,9 +6,22 @@ var CategoryModel = require('../../models/category');
 
 module.exports = function (router) {
 
-    /*Return all categories*/
+
+
+
+    /* Load Category Index page */
 
     router.get('/', function (req, res) {
+        
+	     res.render('category');
+
+    });
+
+
+
+    /*Return all categories*/
+
+    router.get('/all', function (req, res) {
         
 	     CategoryModel.find(function (err, cats) {
 				if (err) {

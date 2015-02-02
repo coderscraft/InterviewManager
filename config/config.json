@@ -33,12 +33,23 @@
         "fallback": "en-US"
     },
 
+    /*
+
      "databaseConfig": {
         "host": "localhost",
         "database": "interview"
+    }, 
+    */
+    
+
+     "databaseConfig": {
+        "host": "ds039421.mongolab.com",
+        "database": "interview-manager",
+        "port":"39421",
+        "user":"ravi",
+        "password":"adminadmin"
     },
-    
-    
+
 
     "middleware": {
 

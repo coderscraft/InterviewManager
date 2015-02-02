@@ -7,7 +7,21 @@ var LevelModel = require('../../models/level');
 module.exports = function (router) {
 
 
-      router.get('/', function (req, res) {
+
+
+	/* Load Category Index page */
+
+	router.get('/', function (req, res) {
+	        
+	     res.render('level');
+
+    });
+
+
+    /* Get all levels*/
+
+
+      router.get('/all', function (req, res) {
         
 	     LevelModel.find(function (err, levels) {
 				if (err) {
